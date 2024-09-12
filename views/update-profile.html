@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Profile</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="update-profile-form">
+            <h2>Update Profile</h2>
+            <form action="/update-profile" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            
+                <!-- <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="<%= user.email %>">
+             -->
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="age">Age:</label>
+                <input type="text" id="age" name="age" required>
+
+                <!-- <label for="password">Password:</label>
+                <input type="password" id="password" name="password" value="<%= user.password %>"> -->
+            
+                <label for="dateOfBirth">Date of Birth:</label>
+                <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+            
+                <button type="submit">Update Profile</button>
+            </form>
+            
+            
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/user-data') // Fetch current user data from server
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('name').value = data.name;
+                   // document.getElementById('email').value = data.email;
+                    document.getElementById('dob').value = data.dob;
+                    //document.getElementById('password').value = data.password;
+                    document.getElementById('age').value = data.age;
+                    document.getElementById('address').value = data.address;
+                })
+                .catch(error => {
+                    console.error('Error fetching user data:', error);
+                    //alert('Failed to load user data.');
+                });
+        });
+
+        document.getElementById('update-profile-form').addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const updatedData = {
+                name: document.getElementById('name').value,
+                // email: document.getElementById('email').value,
+                dob: document.getElementById('dob').value,
+                //password:document.getElementById('password').value,
+                age: document.getElementById('age').value,
+                address: document.getElementById('address').value,
+                
+            };
+
+            fetch('/update-profile', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(updatedData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Profile updated successfully!');
+                    window.location.href = '/dashboard'; // Redirect to dashboard
+                } else {
+                    alert('Failed to update profile.');
+                }
+            })
+            .catch(error => {
+                console.error('Error updating profile:', error);
+                alert('An error occurred.');
+            });
+        });
+
+        function goBack() {
+            window.location.href = '/dashboard'; // Redirect to dashboard
+        }
+    </script>
+</body>
+
+</html>

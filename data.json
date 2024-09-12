@@ -1,0 +1,31 @@
+[
+  {
+    "email": "mpk160109@gmail.com",
+    "password": "mehak",
+    "name": "mannatt jhaa",
+    "age": "24",
+    "address": "4230"
+  },
+  {
+    "name": "heymeitsheyyy",
+    "email": "hey@gmail.com",
+    "password": "hey16",
+    "address": "789",
+    "age": "34"
+  },
+  {
+    "name": "manavvv",
+    "email": "manav@gmail.com",
+    "password": "manav",
+    "age": "90",
+    "address": "4230"
+  },
+  {
+    "name": "Heer",
+    "email": "heer@gmail.com",
+    "password": "123456",
+    "dob": "2021-08-17",
+    "age": "20",
+    "address": "Rajpura , Punjab"
+  }
+]

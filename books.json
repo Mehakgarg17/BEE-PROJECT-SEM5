@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "genre": "Romance",
+    "available": true
+  },
+  {
+    "id": 2,
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "genre": "Southern Gothic",
+    "available": true
+  },
+  {
+    "id": 3,
+    "title": "All the Light We Can See",
+    "author": "Anthony Doerr",
+    "genre": "Historical Fiction",
+    "available": false
+  },
+  {
+    "id": 4,
+    "title": "The Hunger Games",
+    "author": "Suzanne Collins",
+    "genre": "Science Fiction",
+    "available": true
+  },
+  {
+    "id": 5,
+    "title": "A Separate Peace",
+    "author": "John Knowles",
+    "genre": "Young Adult Literature",
+    "available": false
+  },
+  {
+    "id": 6,
+    "title": "Light",
+    "author": "M John Harrison",
+    "genre": "Science Fiction",
+    "available": false
+  }
+]

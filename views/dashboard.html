@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management Dashboard</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdGV_zynz7xuVAw2_LTkJE_zc79hX_Bhnc2894lzQPKi0W7CTDL0cahJgot0ST_IVCXR0&usqp=CAU" alt="Profile Picture" class="profile-pic">
+                <h2>Head Librarian</h2>
+                <p>On Duty</p>
+            </div>
+            <ul class="menu">
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/books.html">Books</a></li>
+                <li><a href="/authors.html">Authors</a></li>
+                <li><a href="/genres.html">Genres</a></li>
+                <li><a href="/borrowals.html">Borrowals</a></li>
+                <li><a href="/profile.html">Profile</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="profile-menu">
+                    <img src="https://img.freepik.com/free-vector/flat-style-woman-avatar_90220-2876.jpg?w=740&t=st=1724991444~exp=1724992044~hmac=fc8199f4bd8435e2b0c3a39f578f3bade244d11ff938f382c6af7c4bec879901" alt="Profile Picture" class="profile-pic top-pic" id="profilePic">
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="/update-profile.html">Update Profile</a>
+                        <a href="/logout">Logout</a>
+                    </div>
+                </div>
+
+                
+            </div>
+            <div class="top-bar-text">
+                <h1>SMART LIBRARY MANAGER</h1>
+                <p>the home to your books...</p>
+            </div>
+
+            <header>
+    
+            </header>
+
+            <!-- Dashboard Metrics -->
+            <div class="dashboard-metrics">
+                <div class="metric-card">
+                    <h3>Issued Books</h3>
+                    <p>1,500</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Manage Users</h3>
+                    <p>300</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Manage Books</h3>
+                    <p>10,000</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Fine Collected</h3>
+                    <p>$5,000</p>
+                </div>
+            </div>
+
+            <!-- Popular Books Chart -->
+            <!-- <section class="charts">
+                <h2>Library Popular Book Data</h2>
+                <div class="chart-container">
+                    <canvas id="bookChart"></canvas>
+                </div>
+            </section> -->
+
+
+            <!-- Popular Books Chart -->
+<!-- Popular Books Chart -->
+<section class="charts">
+    <h2>Popular Books</h2>
+    <div class="chart-container">
+        <canvas id="bookChart"></canvas>
+    </div>
+
+    <!-- Books Container -->
+    <div class="books-container">
+        <!-- Book 1 -->
+        <div class="book-card">
+            <img src="https://kitabay.com/cdn/shop/files/fb5c5496735ab3a031b1acd88cf7056d.jpg?crop=center&height=500&v=1724927109&width=321" alt="Book 1">
+            <h3>The Partisan</h3>
+            
+        </div>
+
+        <!-- Book 2 -->
+        <div class="book-card">
+            <img src="https://kitabay.com/cdn/shop/files/d89277ccf0681a0857fd4791ed19db47.jpg?crop=center&height=500&v=1724926528&width=321" alt="Book 2">
+            <h3>Shrines Of Gaiety</h3>
+            
+        </div>
+
+        <!-- Book 3 -->
+        <div class="book-card">
+            <img src="https://kitabay.com/cdn/shop/files/cad7d49a2ac87f0f43770d78da565d1d.jpg?crop=center&height=468&v=1724927613&width=308" alt="Book 3">
+            <h3>Country Girl</h3>
+            
+        </div>
+
+        <!-- Book 4 -->
+        <div class="book-card">
+            <img src="https://kitabay.com/cdn/shop/products/17cbff6a0393306ceac006ccfda8213d.jpg?crop=center&height=300&v=1708081640&width=200" alt="Book 4">
+            <h3>King</h3>
+            
+        </div>
+
+        <!-- Book 5 -->
+        <div class="book-card">
+            <img src="https://kitabay.com/cdn/shop/products/12c7e87f3ac66a32aa7fb5c32444749d.jpg?crop=center&height=382&v=1706593781&width=248" alt="Book 5">
+            <h3>Stefan's Diaries</h3>
+            
+        </div>
+
+        <!-- Book 6 -->
+        <div class="book-card">
+            <img src="https://kitabay.com/cdn/shop/files/ced3121d87e5269cf374d9168d05bdba.jpg?crop=center&height=400&v=1724742771&width=267" alt="Book 6">
+            <h3>An Arrow To The Moon</h3>
+            
+        </div>
+
+        <div class="book-card">
+            <img src="https://kitabay.com/cdn/shop/products/eae30f899c69be1feeea047f9fdf22a5.jpg?crop=center&height=922&v=1708514918&width=616" alt="Book 6">
+            <h3>The Noise</h3>
+            
+        </div>
+
+        <div class="book-card">
+            <img src="https://kitabay.com/cdn/shop/products/70d537066af47fc5d4b21b63b24e9f01.jpg?crop=center&height=973&v=1709280814&width=616" alt="Book 6">
+            <h3>Death's End</h3>
+            
+        </div>
+    </div>
+</section>
+
+
+        </main>
+    </div>
+
+    <script src="/public/main.js"></script>
+</body>
+
+</html>

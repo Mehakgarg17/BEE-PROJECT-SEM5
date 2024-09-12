@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="profile-page">
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Library Management</h2>
+            </div>
+            <ul class="menu">
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/books.html">Books</a></li>
+                <li><a href="/authors.html">Authors</a></li>
+                <li><a href="/genres.html">Genres</a></li>
+                <li><a href="/borrowals.html">Borrowals</a></li>
+                <li><a href="/profile">Profile</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="top-bar-text-prof">
+                <h1>Welcome !</h1>
+                <p>User Interests</p>
+                <hr>
+            </div>
+            <div class="profile-form-container">
+                <h2>Update Genre Interests</h2>
+                <form id="genre-interest-form">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Enter user email" required>
+                    <label for="genreInterest">Genre Interests:</label>
+                    <input type="text" id="genreInterest" placeholder="Enter new genre interests (comma-separated)" required>
+                    <button type="submit">Update Genre Interests</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('genre-interest-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value.trim();
+            const genreInterest = document.getElementById('genreInterest').value.split(',').map(genre => genre.trim());
+
+            await fetch('/update-genre-interest', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, genreInterest })
+            });
+
+            alert('Genre interests updated successfully.');
+        });
+    </script>
+</body>
+</html>
